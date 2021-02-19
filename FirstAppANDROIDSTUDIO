@@ -1,0 +1,111 @@
+
+
+en-us: First APP made by Me in a simple activity of PAM I
+
+pt-br: Primeiro app feito por mim em uma atividade simples de PAM I
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+activity_main.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" 1° nota:"/>
+
+    <EditText
+        android:id="@+id/txN1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" 2° nota:"/>
+
+    <EditText
+        android:id="@+id/txN2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" 3° nota:"/>
+
+    <EditText
+        android:id="@+id/txN3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" 4° nota:"/>
+
+    <EditText
+        android:id="@+id/txN4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular Média"
+        android:onClick="CalcularMedia"/>
+
+</LinearLayout>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+MainActivity.java
+
+package folder.zago.appcalculodemedia;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void CalcularMedia(View view) {
+
+        EditText etN1 = findViewById(R.id.txN1);
+
+        EditText etN2 = findViewById(R.id.txN2);
+
+        EditText etN3 = findViewById(R.id.txN3);
+
+        EditText etN4 = findViewById(R.id.txN4);
+
+        double resul = (Double.parseDouble(etN1.getText().toString()) + Double.parseDouble(etN2.getText().toString()) + Double.parseDouble(etN3.getText().toString()) + Double.parseDouble(etN4.getText().toString()))/4;
+
+        String resulST = String.format("%.2f",resul);
+
+        Toast.makeText(this,"Sua média é: " + resulST, Toast.LENGTH_LONG).show();
+
+    }
+}
+
