@@ -1,0 +1,145 @@
+
+
+    en-us: Fist class - PAM I
+    
+    Creating a simple program and learning how to use the Toast command in ANDROID STUDIO.
+    
+    
+    
+    pt-br: Primeira Aula - PAM I 
+    
+    Criação de programa simples e aprendendo o uso do comando Toast no ANDROID STUDIO.
+    
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+    activity_main.xml
+    
+    <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nome Completo"/>
+    
+    <EditText
+        android:id="@+id/txNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verificar Dados"
+        android:onClick="Visualisar"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Número 1:"/>
+
+    <EditText
+        android:id="@+id/txNum1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Número 2:"/>
+
+    <EditText
+        android:id="@+id/txNum2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Somar"
+        android:onClick="Somar"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Idade:"/>
+
+    <EditText
+        android:id="@+id/txIdade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verificar Idade"
+        android:onClick="VerificarIdade"/>
+
+</LinearLayout>
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+MainActivity.java
+
+package com.example.firstappfrometec;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void Visualisar(View view) {
+
+        EditText etNome = findViewById(R.id.txNome);
+
+        Toast.makeText(this,"Olá "+etNome.getText(), Toast.LENGTH_LONG).show();
+
+    }
+
+    public void Somar(View view) {
+
+        EditText etNum1 = findViewById(R.id.txNum1);
+        EditText etNum2 = findViewById(R.id.txNum2);
+
+        int total = Integer.parseInt(etNum1.getText().toString()) + Integer.parseInt(etNum2.getText().toString());
+
+        Toast.makeText(this, "A soma é "+total, Toast.LENGTH_LONG).show();
+
+    }
+
+    public void VerificarIdade(View view) {
+
+        EditText etIdade = findViewById(R.id.txIdade);
+
+        int idade = Integer.parseInt(etIdade.getText().toString());
+
+        if(idade>=18) {
+            Toast.makeText(this, "Maior De Idade", Toast.LENGTH_LONG).show();
+        }
+
+        else{
+            Toast.makeText(this,"Menor De Idade",Toast.LENGTH_LONG).show();
+        }
+
+    }
+}
+
