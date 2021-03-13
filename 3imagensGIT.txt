@@ -1,0 +1,88 @@
+https://github.com/lzsZAGO
+
+-------------------------------------
+
+Leoni@DESKTOP-DIOGNMT MINGW64 ~
+$ git init
+Initialized empty Git repository in C:/Users/leoni/.git/
+
+Leoni@DESKTOP-DIOGNMT MINGW64 ~ (master)
+$ dir
+3D\ Objects
+Ambiente\ de\ Impressão
+Ambiente\ de\ Rede
+ansel
+AppData
+Configurações\ Locais
+Contacts
+Cookies
+Dados\ de\ Aplicativos
+Desktop
+Documents
+Downloads
+Favorites
+Links
+Menu\ Iniciar
+Meus\ Documentos
+Modelos
+Music
+Nova\ pasta
+NTUSER.DAT
+ntuser.dat.LOG1
+ntuser.dat.LOG2
+NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TM.blf
+NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000001.regtrans-ms
+NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000002.regtrans-ms
+ntuser.ini
+OneDrive
+Pictures
+Recent
+Saved\ Games
+Searches
+SendTo
+Videos
+
+Leoni@DESKTOP-DIOGNMT MINGW64 ~ (master)
+$ cd Desktop/
+
+Leoni@DESKTOP-DIOGNMT MINGW64 ~/Desktop (master)
+$ dir
+Backup\ Save  image0.jpg  save
+desktop.ini   image1.jpg  SELETIVOPROVAVOLKS.png
+docPLGPW.txt  image2.jpg  SELETIVOVOLKS.png
+
+Leoni@DESKTOP-DIOGNMT MINGW64 ~/Desktop (master)
+$ git add image0.jpg
+
+Leoni@DESKTOP-DIOGNMT MINGW64 ~/Desktop (master)
+$ git add image1.jpg
+
+Leoni@DESKTOP-DIOGNMT MINGW64 ~/Desktop (master)
+$ git add image2.jpg
+
+Leoni@DESKTOP-DIOGNMT MINGW64 ~/Desktop (master)
+$ git remote add ProjectsETEC https://github.com/lzsZAGO/ProjectsETEC
+
+Leoni@DESKTOP-DIOGNMT MINGW64 ~/Desktop (master)
+$ git commit -m "3imagens"
+[master (root-commit) a0e8d0f] 3imagens
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Desktop/image0.jpg
+ create mode 100644 Desktop/image1.jpg
+ create mode 100644 Desktop/image2.jpg
+
+Leoni@DESKTOP-DIOGNMT MINGW64 ~/Desktop (master)
+$ git push -u ProjectsETEC master
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 22.51 KiB | 5.63 MiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/lzsZAGO/ProjectsETEC/pull/new/master
+remote:
+To https://github.com/lzsZAGO/ProjectsETEC
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'ProjectsETEC'.
